@@ -54,7 +54,7 @@ export class CandidatestabsComponent implements OnInit {
   onSavedCandidate(data) {
     //console.log(data);
     //console.log(this.applicantsCount.length + 1);
-    this.newApplicant.id = 12;
+    this.newApplicant.id;
     this.newApplicant.firstname = data.firstname;
     this.newApplicant.lastname = data.lastname;
     this.newApplicant.phone = data.phone;
