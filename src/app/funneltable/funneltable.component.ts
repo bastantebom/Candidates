@@ -23,7 +23,15 @@ export class FunneltableComponent implements OnInit {
     let statusArr = ["reject", "save", "selection", "backup", "recos"];
     let objArr = [];
 
-    statusArr.find(function(arr) {
+    /*statusArr.find(function(arr) {
+      if (arr != applicant.status) {
+        objArr.push(arr);
+      }
+
+      return true;
+    });*/
+
+    statusArr.forEach(arr => {
       if (arr != applicant.status) {
         objArr.push(arr);
       }

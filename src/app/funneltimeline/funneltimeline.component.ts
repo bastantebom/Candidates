@@ -33,7 +33,15 @@ export class FunneltimelineComponent implements OnInit {
   getFunnelCount(targetLink) {
     let objArr = [];
 
-    this.filterCount.find(function(obj) {
+    /*this.filterCount.find(function(obj) {
+      if (obj.status === targetLink) {
+        objArr.push(obj);
+      }
+
+      //return true;
+    });*/
+
+    this.filterCount.forEach(obj => {
       if (obj.status === targetLink) {
         objArr.push(obj);
       }
