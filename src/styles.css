@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css?family=Lato|Lato");
+
+body {
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.pipeline,
+.nav-tabs {
+  background: #f5f5f5;
+}
+
+.nav-tabs {
+  padding-top: 10px;
+}
+
+.nav-tabs li > a {
+  color: #555555;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
+
+.nav-tabs li > a.active {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+}
+
+.move-up {
+  margin-top: -20px;
+}
+
+.pastille {
+  background: #d9534f;
+  color: white;
+  margin: 4px 4px 4px 4px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  padding: 2px 4px 2px 4px;
+}
+
+.candidates-button {
+  margin: 20px 0;
+}
+
+.btn {
+  margin-left: 3px;
+}
+
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #337cbb;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+
+.modal-backdrop.fade {
+  opacity: 0.5;
+}
+.modal-open .modal {
+  opacity: 1;
+}
+
+.modal-dialog {
+  margin-top: 100px;
+}
+
+.forty {
+  width: 20%;
+}
+
+.eighty {
+  width: 30%;
+}

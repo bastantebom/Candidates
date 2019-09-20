@@ -1,0 +1,69 @@
+<table class="table table-hover white-bg">
+  <tbody>
+    <tr
+      *ngFor="
+        let applicant of applicantsList
+          | recommended: clickedRecommended
+          | applicantstatus: 'new'
+      "
+    >
+      <td class="col-xs-2 col-sm-1">
+        <img src="assets/img/temp.png" class="img-circle img-responsive" />
+      </td>
+      <td>
+        <a (click)="open(content)"
+          >{{ applicant.firstname }} {{ applicant.lastname }} &nbsp;
+          <i *ngIf="applicant.recommended" class="fa fa-fw fa-star"></i>
+        </a>
+        <br />
+        <p class="text-muted">{{ applicant.desc }}</p>
+        <p class="text-muted">{{ applicant.email }}, {{ applicant.phone }}</p>
+      </td>
+      <td class="text-right">
+        <a class="btn btn-success" (click)="onChangeStatus(applicant, 's')"
+          >Save</a
+        >
+        <a class="btn btn-danger" (click)="onChangeStatus(applicant, 'r')"
+          >Reject</a
+        >
+      </td>
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">
+            Candidate Profile
+          </h4>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body container">
+          <div class="col-sm-4 forty">
+            <img src="assets/img/temp.png" class="img-circle img-responsive" />
+          </div>
+          <div class="col-sm-6 eighty">
+            <div class="col-md-12">
+              <p class="well well-lg">{{ applicant.desc }}</p>
+              <br />
+
+              <p><strong>Fullname</strong></p>
+              <p>{{ applicant.firstname }} {{ applicant.lastname }}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Phone</strong></p>
+              <p>{{ applicant.phone }}</p>
+            </div>
+            <div class="col-md-6">
+              <p><strong>Email</strong></p>
+              <p>{{ applicant.email }}</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>

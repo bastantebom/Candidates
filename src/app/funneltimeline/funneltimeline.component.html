@@ -1,0 +1,29 @@
+<div class="col-md-3 white-bg candidates-button">
+  <ul class="timeline">
+    <li>
+      <a class="text-muted" (click)="funnelFilter('r')"
+        >Rejected ({{ getFunnelCount("reject") }})</a
+      >
+    </li>
+    <li>
+      <a class="text-muted" (click)="funnelFilter('s')"
+        >Saved ({{ getFunnelCount("save") }})</a
+      >
+    </li>
+    <li class="active">
+      <a class="text-muted" (click)="funnelFilter('l')"
+        >Selections ({{ getFunnelCount("selection") }})</a
+      >
+    </li>
+    <li>
+      <a class="text-muted" (click)="funnelFilter('b')"
+        >Backups ({{ getFunnelCount("backup") }})</a
+      >
+    </li>
+    <li>
+      <a class="text-muted" (click)="funnelFilter('c')"
+        >Recos ({{ getFunnelCount("recos") }})</a
+      >
+    </li>
+  </ul>
+</div>

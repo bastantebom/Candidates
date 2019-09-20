@@ -1,0 +1,73 @@
+<div class="row sub-padding white-bg candidates-button">
+  <a class="btn btn-default" (click)="filterReceived()"
+    >Received<span class="pastille">{{ applicantsCount.length }}</span></a
+  >
+  <a class="btn btn-default" (click)="filterRecommended()"
+    ><i class="fa fa-fw fa-star"></i>Recommended</a
+  >
+  <a class="btn  text-muted" (click)="open(content)"
+    ><i class="fa fa-fw fa-plus"></i>Add candidates</a
+  >
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">
+      Add Candidate
+    </h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body container">
+    <div class="col-sm-4 forty">
+      <img src="assets/img/temp.png" class="img-circle img-responsive" />
+    </div>
+    <div class="col-sm-6 eighty">
+      <div class="col-md-12">
+        <form
+          #userlogin="ngForm"
+          (ngSubmit)="onSavedCandidate(userlogin.value)"
+        >
+          <p><strong>Lastname</strong></p>
+          <p>
+            <input type="text" name="lastname" placeholder="Lastname" ngModel />
+          </p>
+          <p><strong>Firstname</strong></p>
+          <p>
+            <input
+              type="text"
+              name="firstname"
+              placeholder="Firstname"
+              ngModel
+            />
+          </p>
+          <p><strong>Email</strong></p>
+          <p>
+            <input type="text" name="email" placeholder="Email" ngModel />
+          </p>
+          <p><strong>Phone</strong></p>
+          <p>
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              ngModel
+            />
+          </p>
+          <p><strong>Description</strong></p>
+          <p>
+            <input type="text" name="desc" placeholder="Description" ngModel />
+          </p>
+
+          <input type="submit" value="submit" />
+        </form>
+      </div>
+    </div>
+  </div>
+</ng-template>

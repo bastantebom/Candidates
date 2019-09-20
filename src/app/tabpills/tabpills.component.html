@@ -1,0 +1,40 @@
+<ngb-tabset activeId="tab-1">
+  <ngb-tab id="tab-1">
+    <ng-template ngbTabTitle>Candidates</ng-template>
+    <ng-template ngbTabContent>
+      <div class="container">
+        <app-candidatestabs
+          [applicantsCount]="applicants"
+          (recommendedClicked)="pillRecommendedClicked($event)"
+          (receivedClicked)="pillReceivedClicked($event)"
+        ></app-candidatestabs>
+        <app-candidatestable
+          [applicantsList]="applicants"
+          [clickedRecommended]="clickedRecommended"
+        ></app-candidatestable>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-2">
+    <ng-template ngbTabTitle
+      ><i class="fa fa-fw fa-filter"></i> Funnel</ng-template
+    >
+    <ng-template ngbTabContent
+      ><div class="container">
+        <app-funneltimeline
+          [filterCount]="applicants"
+          (linkedClicked)="timelineButtonClicked($event)"
+        ></app-funneltimeline
+        ><app-funneltable
+          [funnelList]="applicants"
+          [funnelStatus]="clickedLink"
+        ></app-funneltable>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="tab-3" title="Settings">
+    <ng-template ngbTabContent>
+      <div class="container"></div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
